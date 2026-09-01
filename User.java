@@ -8,10 +8,11 @@ public class User {
     private String email;
     private List<Task> list_of_tasks;
 
+
 //contructor
-    public User(int id, String name, String email){
-    this.id = id;
+    public User( String name,int id, String email){
     this.name = name;
+    this.id = id;
     this.email = email;
     this.list_of_tasks = new ArrayList<>();
 }
@@ -28,7 +29,12 @@ public void setname(String name){this.name = name;}
 public void setemail(String email){this.email = email;}
 public void setid(int id){this.id = id;}
 
-//list users
+//default string representation for this class
+@Override
+  public String toString() {
+  return "  | Name: " + name + " | ID: " + id + " | email: " + email ;  } 
+
+
 
 
 //set user_tasks
@@ -36,7 +42,6 @@ public void user_tasks(Task list_of_tasks) {
   list_of_tasks.add(Task);}
 }
 //list users tasks
-
 
 
 }
