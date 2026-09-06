@@ -19,4 +19,11 @@ public class DatedTask extends Task {
     
     //getter
     public String get_due_date(){return this.due_date;}
+
+        //default string output for the class
+    @Override
+    public String toString() {
+        return "| Subject: " + subject + " | Priority: " + task_Priority + " | Due Date: "+ due_date +"|";
+    }
+
 }

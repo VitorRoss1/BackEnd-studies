@@ -8,7 +8,7 @@ public class Main {
       Scanner scanner = new Scanner(System.in);
       int choice;
       private List<User> users_list = new ArrayList<>();  
-
+      private List<Task> user_tasks = new ArrayList<>();
 
  do { 
            System.out.println(" === TASK MANAGER ===");
@@ -44,20 +44,81 @@ public class Main {
        //list users_list
         public void listusers_list(){
         if(users_list.isEmpty()){
-            System.out.println("user not registered");}
+            System.out.println("users not registered");}
 
         else{ 
-        for(User x : users_list){ System.out.print(x); }   // for-each ("user") in "users_list" {print}; x = temporary reference
+        for(User x : users_list){ System.out.print(x); }   // for-each ("user") in "users_list" {print};; x = temporary reference
         }
         break;
-    }
+     }
+
+
      case 3: 
+
+
+     public void add_task(Scanner scanner)
+        {
+        System.out.println("Type your task subject");
+        String subject = scanner.nextLine(); //nextLine() reads the hole line
+
+        System.out.println("Type your task priority value(0,1,2)");
+        int priority  = Integer.parseInt(scanner.next()); //next() reads one token
+       //validates string sequence and converts to int
+
+        // Instanciate and add task
+        Task newTask = new Task(subject);
+        newTask.set_priority(priority);
+        user_tasks.add(newTask); 
+        System.out.println("Task created");
+        }
      break;
+
+
      case 4: 
+        public void add_dated_task(Scanner scanner)
+        {
+        System.out.println("Type your task subject");
+        String  subject = scanner.nextLine();
+
+        System.out.println("Type your task priority value(0,1,2)");
+        int priority  = Integer.parseInt(scanner.next());
+
+        System.out.println("Type your task due date)");
+        String dueDate  = scanner.next(); //regex later maybe
+         
+        // Instanciate and add task
+        Task newDatedTask = new Task(subject);
+        newDatedTask.set_priority(priority);
+        user_tasks.add(newDatedTask);
+        System.out.println("Dated Task created");
+        }
      break;
+
+
      case 5: 
+
+    public void list_user_tasks() {
+      if (user_tasks.isEmpty()) {
+       System.out.println("User Has no Tasks");
+      return;
+      }
+
+      for (Task t : user_tasks) {  
+      System.out.println("| Código:" + d.getCodigo() + " | " +d.get_priority()+ " | ");
+      System.out.println(); // '/n' entre os prereq's
+      }
+      System.out.println("Now listing dated tasks:");
+      for (Task t : user_tasks) {  
+      System.out.println("| Código:" + d.getCodigo() + " | " +d.get_priority()+ " | ");
+      System.out.println(); // '/n' entre os prereq's
+      }
+      }
      break;
+
+
+     
      case 6: 
+
      break;
       
 

@@ -7,7 +7,7 @@ public class Task {
 
     public Task(String subject){
         this.subject = subject;
-        this.task_Priority = Priority.MEDIUM; //default priority
+        this.task_Priority = Priority.MEDIUM; //default
     }
 
     //setters
@@ -19,5 +19,11 @@ public class Task {
     //getters
     public String get_task_subject() { return this.subject; }
     public Priority get_priority() { return this.task_Priority; }
+
+    //default string output for the class
+    @Override
+    public String toString() {
+        return "| Subject: " + subject + " | Priority: " + task_Priority + " |";
+    }
 }
     
