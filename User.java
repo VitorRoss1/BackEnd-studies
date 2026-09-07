@@ -28,20 +28,11 @@ public List<Task> get_tasks_list() { return list_of_tasks; }
 public void setname(String name){this.name = name;}
 public void setemail(String email){this.email = email;}
 public void setid(int id){this.id = id;}
+public void set_tasks(Task task) {  list_of_tasks.add(task);}
 
 //default string representation for this class
 @Override
   public String toString() {
-  return "  | Name: " + name + " | ID: " + id + " | email: " + email ;  } 
-
-
-
-
-//set user_tasks
-public void user_tasks(Task list_of_tasks) {
-  list_of_tasks.add(Task);}
-}
-//list users tasks
-
-
+  return "  | Name: " + name + " | ID: " + id + " | email: " + email ;
+  } 
 }
