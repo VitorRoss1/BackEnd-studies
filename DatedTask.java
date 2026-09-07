@@ -24,7 +24,8 @@ public class DatedTask extends Task {
         //default string output for the class
     @Override
     public String toString() {
-        return "| Subject: " + subject + " | Priority: " + task_Priority + " | Due Date: "+ due_date +"|";
+        String status = isDone ? " DONE" : " PENDING";
+        return "| Subject: " + subject + " | Priority: " + task_Priority + " | Due Date: "+ due_date +"|" + "| Status:" + status + " |";
     }
 
 }
