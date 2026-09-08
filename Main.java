@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -253,7 +254,14 @@ public class Main {
            return;
         }
         System.out.println("\n=== TASKS FOR " + user.getname().toUpperCase() + " ===");
-        for (Task t : user.get_tasks_list()) {  
+
+        // Creates a new list ordered by priority
+        List<Task> orderedTasks = user.get_tasks_list()
+           .stream() //transform the task list into a stream
+           .sorted(Comparator.comparing(task -> task.get_priority().getValue())) // 
+           .toList(); //transform the stream back into a list
+
+        for (Task t : orderedTasks) {
            System.out.println(t);
            System.out.println(); 
         }

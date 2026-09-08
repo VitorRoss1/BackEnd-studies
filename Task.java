@@ -1,5 +1,3 @@
-
-
 public class Task {
 
     protected  String subject; //allow subclass access
@@ -31,5 +29,6 @@ public class Task {
         String status = isDone ? " DONE" : " PENDING"; //condition ? value_if_true : value_if_false
         return "| Subject: " + subject + " | Priority: " + task_Priority + " | Status: " + status + " |";
     }
+
 }
     
